@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Octo: Female Larval Fly CNS Connectome</title>
+  <meta name="description" content="A whole-CNS 8 nm isotropic eFIB-SEM volume of a first-instar female Drosophila larva, with automated neuron, synapse, mitochondria and glia segmentations.">
+
+  <!-- Social preview (shown when the link is shared on Slack / X / Bluesky) -->
+  <meta property="og:title" content="The female larval fly CNS connectome: first draft">
+  <meta property="og:description" content="Whole-CNS eFIB-SEM volume of a first-instar female Drosophila larva with neuron, synapse, mitochondria and glia segmentations.">
+  <meta property="og:image" content="https://mohinta2892.github.io/octo-larva/assets/img/neuropil_vs_soma.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='44' fill='%230f766e'/><circle cx='50' cy='50' r='18' fill='white'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="venue">bioRxiv preprint &middot; 2026</div>
+    <h1>The female larval fly CNS connectome: first draft</h1>
+
+    <p class="authors">
+      <span>Samia Mohinta<sup>1,2</sup>,</span>
+      <span>Daniel Franco-Barranco<sup>1,2,3</sup>,</span>
+      <span>Shi Yan Lee<sup>1,2</sup>,</span>
+      <span>Pedro Gómez-Gálvez<sup>1,6,7</sup>,</span>
+      <span>Shaurya Agrawal<sup>2</sup>,</span>
+      <span>Michael Clayton<sup>1</sup>,</span>
+      <span>Christopher L. Barnes<sup>1,2</sup>,</span>
+      <span>Nadine Randel<sup>2</sup>,</span>
+      <span>Ana Correia<sup>1</sup>,</span>
+      <span>Nicolò Ceffa<sup>1</sup>,</span>
+      <span>Nadia Stoichkova Velichkova<sup>4,5</sup>,</span>
+      <span>Katrin Nielsen<sup>4,5</sup>,</span>
+      <span>Harald Hess<sup>9</sup>,</span>
+      <span>Song Pang<sup>9</sup>,</span>
+      <span>C. Shan Xu<sup>9,10</sup>,</span>
+      <span>Jimena Berni<sup>4,5</sup>,</span>
+      <span>Michał Januszewski<sup>8</sup>,</span>
+      <span>Marta Zlatic<sup>1,2</sup>,</span>
+      <span>Albert Cardona<sup>1,2,&#8727;</sup></span>
+    </p>
+
+    <p class="affils">
+      <span><sup>1</sup>MRC Laboratory of Molecular Biology, Cambridge, UK</span>
+      <span><sup>2</sup>Dept. of Physiology, Development and Neuroscience, University of Cambridge, UK</span>
+      <span><sup>3</sup>Donostia International Physics Center (DIPC), San Sebastián, Spain</span>
+      <span><sup>4</sup>Sussex Medical School, University of Sussex, UK</span>
+      <span><sup>5</sup>Dept. of Clinical Neuroscience, University of Brighton, UK</span>
+      <span><sup>6</sup>Instituto de Biomedicina de Sevilla (IBiS) &amp; Universidad de Sevilla, Spain</span>
+      <span><sup>7</sup>CIBERNED, Madrid, Spain</span>
+      <span><sup>8</sup>Google Research, Switzerland</span>
+      <span><sup>9</sup>HHMI Janelia Research Campus, USA</span>
+      <span><sup>10</sup>Dept. of Cellular and Molecular Physiology, Yale School of Medicine, USA</span>
+    </p>
+    <p class="corr">&#8727;Corresponding author</p>
+
+    <nav class="buttons" aria-label="Paper links">
+      <a class="btn" data-link="biorxiv" data-link-wrap>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+        <span class="label">Paper</span></a>
+      <a class="btn" data-link="neuroglancer" data-link-wrap>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4a2 2 0 0 0 1-1.7z"/><path d="M3.3 7 12 12l8.7-5M12 22V12"/></svg>
+        <span class="label">Explore in Neuroglancer</span></a>
+      <a class="btn" data-link="catena" data-link-wrap>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>
+        <span class="label">Code</span></a>
+      <a class="btn" data-link="zenodo" data-link-wrap>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/><path d="M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></svg>
+        <span class="label">Benchmark data</span></a>
+      <a class="btn primary" href="#access">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <span class="label">Request CAVE / CATMAID access</span></a>
+    </nav>
+
+    <figure class="teaser">
+      <img src="assets/img/neuropil_vs_soma.png" alt="Left: mesh of the larval central nervous system with a cutting plane. Right: a cross-section showing raw EM, the FFN segmentation covering neuropil and cell bodies, and the LSD segmentation covering neuropil only.">
+      <figcaption><b>Octo</b>, the complete central nervous system of a first-instar female <i>Drosophila</i> larva, imaged with eFIB-SEM at 8&nbsp;nm isotropic resolution. Shown: a cross-section through the brain lobes with the raw EM and two automated neuron segmentations, FFN (neuropil and soma) and LSD (neuropil only).</figcaption>
+    </figure>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="abstract">
+    <h2>Abstract</h2>
+    <!-- TODO: replace with the verbatim abstract from the paper -->
+    <p class="lead">We release an enhanced FIB-SEM volume and associated neuron, mitochondria, synapse and glia automated segmentations of the complete central nervous system of a first-instar female <i>Drosophila melanogaster</i> larva. The volume is free of gaps and imaging artefacts. Segmentation data is largely unproofread, except for select neurons in the premotor and proprioceptive systems and for subvolumes with manually annotated synapses, which serve as training and evaluation data. The dataset represents the first complete central nervous system of the larval fly; completing its connectome will require improved machine-vision methods or extensive human proofreading. All the data and methods are publicly available for further improvement and analysis.</p>
+  </section>
+
+  <section id="dataset">
+    <h2>The dataset at a glance</h2>
+    <div class="stats">
+      <div class="stat"><div class="num">8 nm</div><div class="lbl">isotropic voxels (eFIB-SEM)</div></div>
+      <div class="stat"><div class="num">164 &times; 172 &times; 278 &micro;m</div><div class="lbl">whole CNS: brain and ventral nerve cord</div></div>
+      <div class="stat"><div class="num">~3.5 M</div><div class="lbl">predicted synaptic pairs</div></div>
+      <div class="stat"><div class="num">1.26 M</div><div class="lbl">mitochondria instances</div></div>
+    </div>
+
+    <h3>What is released</h3>
+    <ul class="points">
+      <li><b>EM volume.</b> 20,486 &times; 21,471 &times; 34,745 voxels with no section loss, no curtaining and no known membrane nicks that would cause false merges.</li>
+      <li><b>Neuron segmentations.</b> Three automated instance segmentations (FFN, LSD and BiaPy). FFN covers both neuropil and cell bodies across the whole CNS and scores best on long-range continuity.</li>
+      <li><b>Synapses.</b> Whole-CNS synaptic partner predictions from Synful, re-implemented in <a data-link="catena">Catena</a>, plus manually annotated evaluation cubes.</li>
+      <li><b>Mitochondria and glia.</b> A whole-CNS mitochondria instance segmentation and a semantic glia segmentation.</li>
+      <li><b>Proofread neurons.</b> Selected premotor and proprioceptive neurons, including 24 fully proofread VNC neurons used for evaluation.</li>
+    </ul>
+  </section>
+
+  <section id="figures">
+    <h2>Highlights</h2>
+
+    <!-- TODO: add Fig. 2 (qualitative comparison of neuron segmentations) here -->
+
+    <figure>
+      <img src="assets/img/synapse_preds.png" alt="A reconstructed neuron in yellow with predicted synapses in cyan; three insets show EM close-ups of presynaptic sites with arrows to their postsynaptic partners.">
+      <figcaption><b>Predicted synaptic connections.</b> A neuron with its predicted synapses (cyan). Insets show EM at three sites; dots mark presynaptic locations and arrows point to postsynaptic partners.</figcaption>
+    </figure>
+
+    <figure>
+      <img class="light" src="assets/img/mito_overview.png" alt="A block of raw EM next to the same block showing predicted mitochondria as coloured 3D instances.">
+      <figcaption><b>Mitochondria segmentation.</b> A raw EM subvolume (left) and its predicted mitochondria instances (right).</figcaption>
+    </figure>
+
+    <!-- TODO: add Fig. 5 (glia segmentation) here -->
+  </section>
+
+  <section id="access">
+    <h2>Data access</h2>
+    <p>The EM volume and automated segmentations can be browsed without an account. Proofreading environments need an account.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Resource</th><th>Contents</th><th>Access</th></tr></thead>
+        <tbody>
+          <tr data-link-wrap><td>Neuroglancer</td><td>EM volume and neuron segmentations</td><td><a data-link="neuroglancer">Open</a></td></tr>
+          <tr data-link-wrap><td>Neuroglancer</td><td>Mitochondria and glia segmentations</td><td><a data-link="mitoGlia">Open</a></td></tr>
+          <tr data-link-wrap><td>Zenodo</td><td>Evaluation crops, synapse cubes and proofread neurons</td><td><a data-link="zenodo">Download</a></td></tr>
+          <tr><td>CAVE</td><td>Predicted synaptic connections; collaborative proofreading of the segmentation</td><td>On request</td></tr>
+          <tr><td>CATMAID</td><td>Skeleton tracing and annotation</td><td>On request</td></tr>
+          <tr data-link-wrap><td>Code</td><td>Catena (synapse and neuron pipelines)</td><td><a data-link="catena">GitHub</a></td></tr>
+          <tr data-link-wrap><td>Code</td><td>BiaPy (segmentation)</td><td><a data-link="biapy">GitHub</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="access">
+      <h3>Request access to CAVE or CATMAID</h3>
+      <p>We give access to researchers who want to proofread, trace or analyse Octo. To request it:</p>
+      <ol>
+        <li>Fill in the short form below, including the Google account you will use to sign in. CAVE uses Google sign-in.</li>
+        <li>We review requests and reply by email, usually within a few working days.</li>
+        <li>Once approved, you get login details and a short guide to the proofreading workflow.</li>
+      </ol>
+      <a class="btn primary" data-link="accessForm" data-pending="Request form coming soon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        <span class="label">Open the access request form</span></a>
+    </div>
+  </section>
+
+  <section id="citation">
+    <h2>Citation</h2>
+    <div class="bib">
+      <button id="copy-bibtex" type="button">Copy</button>
+<pre id="bibtex">@article{mohinta2026octo,
+  title   = {The female larval fly {CNS} connectome: first draft},
+  author  = {Mohinta, Samia and Franco-Barranco, Daniel and Lee, Shi Yan and
+             G{\'o}mez-G{\'a}lvez, Pedro and Agrawal, Shaurya and Clayton, Michael and
+             Barnes, Christopher L. and Randel, Nadine and Correia, Ana and
+             Ceffa, Nicol{\`o} and Stoichkova Velichkova, Nadia and Nielsen, Katrin and
+             Hess, Harald and Pang, Song and Xu, C. Shan and Berni, Jimena and
+             Januszewski, Micha{\l} and Zlatic, Marta and Cardona, Albert},
+  journal = {bioRxiv},
+  year    = {2026},
+  doi     = {10.64898/2026.09.28.754924},
+  url     = {https://www.biorxiv.org/content/10.64898/2026.09.28.754924v1}
+}</pre>
+    </div>
+  </section>
+
+  <section id="acknowledgements">
+    <h2>Acknowledgements</h2>
+    <p class="muted">This work was supported by HHMI Janelia Research Campus, the Wellcome Trust (205038/Z/16/Z), the European Research Council (ERC-2018-COG 819650), BBSRC (APP26929, &ldquo;Population connectomics&rdquo;) and the MRC Laboratory of Molecular Biology.</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    Data and figures released under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+    Questions about the dataset? Use the <a href="#access">access request form</a>.
+  </div>
+</footer>
+
+<div id="lightbox" hidden><img alt=""></div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
