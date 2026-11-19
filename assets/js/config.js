@@ -7,7 +7,10 @@ window.SITE_LINKS = {
   // (paste the "Send -> link" URL after running google_form/create_access_form.gs)
   accessForm: "https://docs.google.com/forms/d/e/1FAIpQLSd3hmCoLkBUpjMLzhWdcpZUQ6DQolnAMdjsfBStqmkQOSrIqA/viewform",
 
-  biorxiv:    "https://www.biorxiv.org/content/10.64898/2026.09.28.754924v1",
+  // The Slack invite link is deliberately NOT here: it is emailed only to
+  // approved users (see google_form/approval_and_slack.gs).
+
+  biorxiv:   "https://www.biorxiv.org/content/10.64898/2026.09.28.754924v1",
   neuroglancer:"https://tinyurl.com/octo-seg",       // EM volume + neuron segmentations
   mitoGlia:    "https://tinyurl.com/mito-glia",      // mitochondria + glia segmentations
   zenodo:      "https://zenodo.org/records/22832866",// evaluation datasets

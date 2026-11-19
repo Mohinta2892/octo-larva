@@ -27,6 +27,16 @@ octo_page/
 
 Until `accessForm` is set, the page shows a greyed-out "Request form coming soon" button.
 
+### Approvals and Slack invites
+
+`google_form/approval_and_slack.gs` adds a Slack question to the form, plus **Status** and
+**Approval email sent** columns to the responses sheet. When you set a row's Status to
+**Approved**, it emails that person automatically, with the Slack invite link if they asked for it.
+The setup steps are at the top of the file.
+
+The Slack invite link goes in the Apps Script **Script properties** as `SLACK_INVITE_URL`.
+Never put it in this repo, because the repo is public.
+
 ## 2. Publish on GitHub Pages
 
 1. Create an **empty** public repo on github.com, e.g. `octo-connectome`.
